@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Пиццафорния — домашние мини-пиццы в Красной Поляне · доставка</title>
+<meta name="description" content="Домашние мини-пиццы из свежего теста, сосиска в тесте с картофельным пюре, паста в сырной голове и салат «Цезарь». 4 точки в Красной Поляне, доставка, круглосуточный филиал. Тел: +7 938 315-01-10">
+<meta name="theme-color" content="#2C1B10">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Пиццафорния — домашние мини-пиццы в Красной Поляне">
+<meta property="og:description" content="Мини-пиццы из свежего теста, вкус детства, доставка по Красной Поляне. Каждая шестая пицца — бесплатно!">
+<meta property="og:image" content="https://optim.tildacdn.com/tild3234-3866-4031-b238-626333396633/-/format/webp/__2026-02-03__105336.png.webp">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+
+<!-- Производительность: ранние подключения к источникам ресурсов -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://optim.tildacdn.com">
+<link rel="dns-prefetch" href="https://optim.tildacdn.com">
+
+<!-- Шрифты: дружелюбная округлая кириллица, display=swap + subset (Nunito & Montserrat Alternates) -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Schema.org: структурированные данные для локального бизнеса (топ практик разметки) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Пиццафорния",
+  "description": "Домашние мини-пиццы, сосиска в тесте, паста в сырной голове. Доставка по Красной Поляне.",
+  "servesCuisine": ["Пицца", "Фастфуд", "Паста"],
+  "telephone": "+7 938 315-01-10",
+  "email": "Slllimmmruslan@yandex.ru",
+  "priceRange": "₽₽",
+  "image": "https://optim.tildacdn.com/tild3234-3866-4031-b238-626333396633/-/format/webp/__2026-02-03__105336.png.webp",
+  "url": "https://pizzafornia.tilda.ws/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Турчинского, 54",
+    "addressLocality": "Красная Поляна",
+    "addressCountry": "RU"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "09:00", "closes": "22:00"
+  }],
+  "department": [
+    {
+      "@type": "Restaurant",
+      "name": "Пиццафорния — Защитников Кавказа",
+      "address": {"@type": "PostalAddress", "streetAddress": "ул. Защитников Кавказа, 74а", "addressLocality": "Красная Поляна", "addressCountry": "RU"},
+      "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}]
+    },
+    {
+      "@type": "Restaurant",
+      "name": "Пиццафорния — Ярмарка Променад",
+      "address": {"@type": "PostalAddress", "streetAddress": "ул. Горная Карусель, Ярмарка Променад", "addressLocality": "Курорт Красная Поляна", "addressCountry": "RU"},
+      "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday","Sunday"], "opens": "11:00", "closes": "23:59"}]
+    }
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   ДИЗАЙН-ТОКЕНЫ (подход Bootstrap: одна точка правды)
+   ============================================================ */
+:root{
+  /* палитра */
+  --cream:#FBF4E8;
+  --cream-2:#F4EAD7;
+  --dough:#F6E2BD;
+  --choco:#2C1B10;
+  --choco-soft:#57402F;
+  --tomato:#D8442A;
+  --tomato-dark:#B4331E;
+  --basil:#55713B;
+  --cheese:#F0B843;
+  --white:#FFFFFF;
+  --on-tomato:#FFF7F0;
+
+  /* модульная шкала отступов (8pt grid) */
+  --g-1:8px; --g-2:16px; --g-3:24px; --g-4:32px; --g-5:44px; --g-6:64px; --g-7:88px; --g-8:120px;
+
+  /* модульная шкала типографики (ratio 1.25) */
+  --fs-xs:.8rem; --fs-sm:.9rem; --fs-base:1rem; --fs-md:1.125rem; --fs-lg:1.3rem;
+  --fs-xl:clamp(1.9rem,4.2vw,2.9rem); --fs-2xl:clamp(2.6rem,7vw,4.5rem);
+
+  /* уровни высоты (Elevation: 3 ступени, как принято в дизайн-системах) */
+  --shadow-1:0 1px 3px rgba(44,27,16,.08), 0 1px 2px rgba(44,27,16,.06);
+  --shadow-2:0 6px 16px rgba(44,27,16,.10), 0 3px 6px rgba(44,27,16,.06);
+  --shadow-3:0 18px 44px rgba(44,27,16,.18), 0 8px 16px rgba(44,27,16,.08);
+
+  --radius-sm:12px; --radius:20px; --radius-lg:28px; --radius-pill:999px;
+
+  --font-d:"Montserrat Alternates","Segoe UI",system-ui,-apple-system,sans-serif;
+  --font-b:"Nunito","Segoe UI",system-ui,-apple-system,sans-serif;
+
+  --header-h:72px;
+  color-scheme:light;
+}
+/* ============================================================
+   БАЗА
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-b);font-size:var(--fs-base);line-height:1.62;
+  color:var(--choco);background:var(--cream);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+section{scroll-margin-top:calc(var(--header-h) + 12px)}
+::selection{background:var(--cheese);color:var(--choco)}
+:focus-visible{outline:3px solid var(--tomato);outline-offset:3px;border-radius:6px}
+
+/* Доступность: ссылка «перейти к контенту» */
+.skip-link{
+  position:fixed;top:-60px;left:var(--g-2);z-index:300;
+  background:var(--choco);color:var(--cream);font-weight:800;
+  padding:12px 20px;border-radius:0 0 14px 14px;transition:top .2s;
+}
+.skip-link:focus{top:0}
+
+.container{max-width:1180px;margin-inline:auto;padding-inline:var(--g-3)}
+.section{padding-block:clamp(56px,9vw,var(--g-8))}
+
+/* Типографика */
+h1,h2,h3,.logo{font-family:var(--font-d);line-height:1.14;letter-spacing:.005em;text-wrap:balance}
+.sec-title{font-size:var(--fs-xl);font-weight:900;margin-bottom:var(--g-2)}
+.sec-sub{font-size:var(--fs-md);color:var(--choco-soft);max-width:620px}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-d);font-weight:800;font-size:var(--fs-xs);
+  letter-spacing:.14em;text-transform:uppercase;color:var(--tomato-dark);
+  background:rgba(216,68,42,.09);border:1px solid rgba(180,51,30,.22);
+  padding:7px 15px;border-radius:var(--radius-pill);margin-bottom:var(--g-2);
+}
+.kicker::before{content:"🍕";letter-spacing:0}
+
+/* Кнопки: крупные цели (закон Фиттса), единая система */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-weight:900;font-size:var(--fs-base);line-height:1.2;
+  min-height:52px;padding:15px 30px;border-radius:var(--radius-pill);
+  transition:transform .16s ease,box-shadow .16s ease,background-color .16s ease,color .16s ease;
+  will-change:transform;text-align:center;
+}
+.btn:active{transform:scale(.97)}
+@media (hover:hover){
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{transform:scale(.97)}
+}
+.btn-tomato{background:linear-gradient(135deg,var(--tomato),var(--tomato-dark));color:var(--on-tomato);box-shadow:var(--shadow-2)}
+.btn-tomato:hover{box-shadow:var(--shadow-3)}
+.btn-dark{background:var(--choco);color:var(--cream);box-shadow:var(--shadow-1)}
+.btn-dark:hover{box-shadow:var(--shadow-2)}
+.btn-ghost{background:transparent;color:var(--choco);box-shadow:inset 0 0 0 2px rgba(44,27,16,.28)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--choco);background:rgba(44,27,16,.05)}
+.btn-sm{min-height:44px;padding:11px 20px;font-size:var(--fs-sm)}
+
+/* ============================================================
+   ШАПКА (sticky + scrollspy подсветка активного пункта)
+   ============================================================ */
+.header{
+  position:fixed;inset:0 0 auto 0;z-index:200;height:var(--header-h);
+  background:color-mix(in srgb, var(--cream) 88%, transparent);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(44,27,16,.08);
+  transition:box-shadow .25s ease;
+}
+.header.scrolled{box-shadow:var(--shadow-1)}
+.header__in{display:flex;align-items:center;justify-content:space-between;gap:var(--g-3);height:var(--header-h)}
+.logo{display:inline-flex;align-items:center;gap:10px;font-size:1.22rem;font-weight:900;letter-spacing:.01em}
+.logo .pz{font-size:1.45rem;line-height:1}
+.logo b{color:var(--tomato)}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{
+  position:relative;font-weight:800;font-size:var(--fs-sm);color:var(--choco-soft);
+  padding:6px 2px;transition:color .15s;
+}
+.nav a:hover{color:var(--tomato)}
+.nav a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:3px;
+  background:var(--tomato);transform:scaleX(0);transform-origin:left;transition:transform .22s;
+}
+.nav a:hover::after,.nav a.active::after{transform:scaleX(1)}
+.nav a.active{color:var(--tomato-dark)}
+.header__cta{display:flex;align-items:center;gap:14px}
+.phone-link{display:inline-flex;align-items:center;gap:8px;font-weight:900;white-space:nowrap}
+.phone-link:hover{color:var(--tomato)}
+
+.burger{display:none;flex-direction:column;gap:5px;padding:10px;border-radius:10px}
+.burger span{width:26px;height:3px;border-radius:3px;background:var(--choco);transition:transform .25s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+.mobile-menu{
+  position:fixed;inset:var(--header-h) 0 auto 0;z-index:190;display:none;
+  background:var(--cream);padding:var(--g-3);border-bottom:1px solid rgba(44,27,16,.1);
+  box-shadow:var(--shadow-2);
+}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;font-family:var(--font-d);font-weight:800;font-size:1.3rem;padding:14px 6px;border-bottom:1px solid rgba(44,27,16,.08)}
+.mobile-menu a:hover{color:var(--tomato)}
+.mobile-menu .btn{width:100%;margin-top:var(--g-2)}
+
+/* ============================================================
+   ГЕРОЙ
+   ============================================================ */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:calc(var(--header-h) + 40px) 0 110px;color:#fff;overflow:hidden}
+.hero__bg{position:absolute;inset:0;z-index:-2}
+.hero__bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(1.02)}
+.hero__bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(26,12,5,.88) 0%,rgba(26,12,5,.55) 45%,rgba(26,12,5,.12) 100%);
+}
+.hero__inner{max-width:740px}
+.hero .kicker{background:rgba(240,184,67,.16);border-color:rgba(240,184,67,.45);color:var(--cheese)}
+.hero h1{font-size:var(--fs-2xl);font-weight:900;text-transform:uppercase;margin-bottom:var(--g-2)}
+.hero h1 .accent{color:var(--cheese)}
+.typed-line{font-family:var(--font-d);font-weight:700;font-size:var(--fs-lg);line-height:1.4;min-height:1.4em;margin-bottom:var(--g-2);color:var(--cream)}
+.typed-line .cursor{display:inline-block;width:3px;height:1.05em;background:var(--tomato);vertical-align:-.12em;border-radius:2px;animation:blink .95s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+.hero__lead{font-size:var(--fs-md);max-width:560px;color:rgba(255,255,255,.9);margin-bottom:var(--g-4)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:var(--g-4)}
+.hero__meta{display:flex;flex-wrap:wrap;gap:14px 26px;font-size:var(--fs-sm);color:rgba(255,255,255,.88)}
+.hero__meta div{display:flex;align-items:center;gap:9px}
+.hero__meta svg{flex:none;color:var(--cheese)}
+.hero__scroll{
+  position:absolute;left:50%;bottom:22px;transform:translateX(-50%);
+  font-size:var(--fs-xs);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75);
+  display:flex;flex-direction:column;align-items:center;gap:6px;animation:bob 2.4s ease-in-out infinite;
+}
+@keyframes bob{50%{transform:translate(-50%,9px)}}
+
+/* ============================================================
+   ФИШКИ (текстурный фон + сетка)
+   ============================================================ */
+.features{
+  background-image:radial-gradient(rgba(216,68,42,.06) 1.6px,transparent 1.6px);
+  background-size:24px 24px;
+}
+.features__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--g-3);margin-top:var(--g-5)}
+.feat{
+  background:var(--white);border:1px solid rgba(44,27,16,.07);border-radius:var(--radius-lg);
+  padding:var(--g-4) var(--g-3);box-shadow:var(--shadow-1);
+  transition:transform .2s,box-shadow .2s;
+}
+@media (hover:hover){.feat:hover{transform:translateY(-5px);box-shadow:var(--shadow-2)}}
+.feat__icon{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;margin-bottom:var(--g-2);background:linear-gradient(135deg,rgba(216,68,42,.14),rgba(240,184,67,.16))}
+.feat h3{font-size:1.05rem;margin-bottom:6px}
+.feat p{font-size:var(--fs-sm);color:var(--choco-soft)}
+
+/* ============================================================
+   О НАС
+   ============================================================ */
+.about{background:var(--cream-2)}
+.about__grid{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(32px,6vw,72px);align-items:center}
+.about__media{position:relative}
+.about__media .main-img{border-radius:var(--radius-lg);box-shadow:var(--shadow-3);aspect-ratio:4/4.4;object-fit:cover;width:100%}
+.about__badge{
+  position:absolute;left:-16px;bottom:34px;background:var(--choco);color:var(--cheese);
+  font-family:var(--font-d);font-weight:800;text-align:center;padding:16px 22px;border-radius:var(--radius);
+  box-shadow:var(--shadow-3);transform:rotate(-4deg);
+}
+.about__badge b{display:block;font-size:1.8rem;line-height:1;color:#fff}
+.about__list{margin-top:var(--g-3);display:grid;gap:14px}
+.about__list li{display:flex;gap:14px;align-items:flex-start;font-size:1.02rem}
+.about__list .check{
+  flex:none;width:26px;height:26px;border-radius:50%;background:var(--basil);color:#fff;
+  display:grid;place-items:center;font-size:var(--fs-xs);margin-top:3px;
+}
+.about__actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:var(--g-4)}
+
+/* ============================================================
+   ХИТЫ
+   ============================================================ */
+.hits__head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:var(--g-5)}
+.hits__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--g-3)}
+.hit{
+  background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-1);
+  display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s;
+}
+@media (hover:hover){.hit:hover{transform:translateY(-6px);box-shadow:var(--shadow-2)}}
+.hit__imgwrap{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--dough)}
+.hit__imgwrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+@media (hover:hover){.hit:hover .hit__imgwrap img{transform:scale(1.07)}}
+.hit__tag{
+  position:absolute;top:14px;left:14px;z-index:2;background:var(--tomato);color:var(--on-tomato);
+  font-family:var(--font-d);font-weight:800;font-size:.72rem;letter-spacing:.08em;
+  padding:6px 13px;border-radius:var(--radius-pill);text-transform:uppercase;
+}
+.hit__tag.light{background:var(--cheese);color:var(--choco)}
+.hit__body{padding:var(--g-3);display:flex;flex-direction:column;gap:8px;flex:1}
+.hit__body h3{font-size:1.08rem}
+.hit__body p{font-size:var(--fs-sm);color:var(--choco-soft);flex:1}
+
+/* ============================================================
+   ГАЛЕРЕЯ
+   ============================================================ */
+.gallery{background:var(--cream-2)}
+.gallery__grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:12px;margin-top:var(--g-5)}
+.gallery__grid figure{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-1)}
+.gallery__grid figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gallery__grid figure:nth-child(4){grid-column:span 2}
+.gallery__grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+@media (hover:hover){.gallery__grid figure:hover img{transform:scale(1.06)}}
+.gallery__grid figcaption{
+  position:absolute;inset:auto 0 0 0;padding:26px 14px 10px;font-size:var(--fs-xs);font-weight:700;
+  color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.55));
+}
+
+/* ============================================================
+   МЕНЮ ПО ТОЧКАМ (тёмная секция)
+   ============================================================ */
+.menu-points{background:var(--choco);color:var(--cream);position:relative;overflow:hidden}
+.menu-points::before{
+  content:"🍕";position:absolute;right:-30px;top:-30px;font-size:300px;opacity:.05;transform:rotate(15deg);
+  pointer-events:none;user-select:none;
+}
+.menu-points .kicker{background:rgba(240,184,67,.15);border-color:rgba(240,184,67,.4);color:var(--cheese)}
+.menu-points .sec-sub{color:rgba(251,244,232,.75)}
+.points__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--g-2);margin-top:var(--g-5)}
+.point{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius-lg);padding:var(--g-3);display:flex;flex-direction:column;gap:10px;
+  transition:background .2s,transform .2s;min-height:230px;
+}
+@media (hover:hover){.point:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}}
+.point__head{display:flex;align-items:center;justify-content:space-between}
+.point .pin{
+  width:44px;height:44px;border-radius:14px;background:rgba(240,184,67,.18);
+  display:grid;place-items:center;font-size:1.25rem;
+}
+.point__arrow{color:var(--cheese);opacity:0;transform:translateX(-6px);transition:.2s;font-weight:900}
+@media (hover:hover){.point:hover .point__arrow{opacity:1;transform:none}}
+.point h3{font-size:1.04rem;color:#fff;line-height:1.3}
+.point p{font-size:var(--fs-sm);color:rgba(251,244,232,.72);line-height:1.5}
+.point .btn{margin-top:auto;width:100%}
+
+/* ============================================================
+   АКЦИИ
+   ============================================================ */
+.specials{
+  background:
+    radial-gradient(1100px 500px at 88% -8%,rgba(240,184,67,.18),transparent 60%),
+    var(--tomato-dark);
+  color:#fff;
+}
+.specials__in{
+  display:grid;grid-template-columns:1.25fr .85fr;gap:var(--g-6);align-items:center;
+  background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.16);border-radius:36px;padding:clamp(28px,5vw,56px);
+  position:relative;overflow:hidden;
+}
+.specials__in::after{content:"🍕";position:absolute;right:-30px;bottom:-50px;font-size:230px;opacity:.08;transform:rotate(-14deg);pointer-events:none;user-select:none}
+.specials .kicker{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);color:var(--cheese)}
+.specials h2{font-size:var(--fs-xl);text-transform:uppercase;margin-bottom:var(--g-2)}
+.specials h2 .free{color:var(--cheese);font-weight:900}
+.specials__desc{max-width:480px;margin-bottom:var(--g-4);color:rgba(255,255,255,.92)}
+.specials__cta{display:flex;flex-wrap:wrap;gap:14px}
+.specials__side{display:flex;flex-direction:column;gap:14px}
+.spec-card{
+  background:rgba(0,0,0,.2);border:1.5px dashed rgba(240,184,67,.55);border-radius:var(--radius);
+  padding:18px var(--g-3);display:flex;gap:16px;align-items:center;
+}
+.spec-card .num{font-family:var(--font-d);font-weight:900;font-size:1.9rem;color:var(--cheese);flex:none}
+.spec-card div{font-size:var(--fs-sm);line-height:1.45}
+
+/* ============================================================
+   ДОСТАВКА
+   ============================================================ */
+.delivery{background:var(--cream-2)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--g-3);margin-top:var(--g-5)}
+.step{
+  background:var(--white);border-radius:var(--radius-lg);padding:var(--g-4) var(--g-3);
+  box-shadow:var(--shadow-1);border:1px solid rgba(44,27,16,.06);position:relative;
+}
+.step__num{
+  width:54px;height:54px;border-radius:16px;background:var(--tomato);color:var(--on-tomato);
+  font-family:var(--font-d);font-weight:900;font-size:1.45rem;display:grid;place-items:center;margin-bottom:var(--g-2);
+}
+.step h3{margin-bottom:8px;font-size:1.1rem}
+.step p{font-size:var(--fs-sm);color:var(--choco-soft)}
+.delivery__note{
+  margin-top:var(--g-5);background:var(--cheese);border-radius:20px;padding:20px 26px;
+  display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between;
+  color:var(--choco);font-weight:800;
+}
+
+/* ============================================================
+   КОНТАКТЫ
+   ============================================================ */
+.places{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--g-3);margin-top:var(--g-5)}
+.place{
+  background:var(--white);border-radius:var(--radius-lg);padding:var(--g-4);border:1px solid rgba(44,27,16,.06);
+  box-shadow:var(--shadow-1);display:flex;gap:20px;transition:transform .2s,box-shadow .2s;
+}
+@media (hover:hover){.place:hover{transform:translateY(-4px);box-shadow:var(--shadow-2)}}
+.place__icon{
+  flex:none;width:56px;height:56px;border-radius:17px;color:var(--tomato);
+  background:linear-gradient(135deg,rgba(216,68,42,.14),rgba(240,184,67,.16));
+  display:grid;place-items:center;
+}
+.place h3{font-size:1.06rem;margin-bottom:6px}
+.place .addr{color:var(--choco-soft);font-size:var(--fs-sm);margin-bottom:10px}
+.place .hours{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:var(--fs-sm)}
+.place .hours .dot{width:9px;height:9px;border-radius:50%;background:var(--basil);flex:none;box-shadow:0 0 0 3px rgba(85,113,59,.18)}
+.place .hours.night .dot{background:var(--tomato);box-shadow:0 0 0 3px rgba(216,68,42,.18)}
+.contacts__bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--g-3);margin-top:var(--g-3)}
+.contact-card{
+  background:var(--choco);color:var(--cream);border-radius:var(--radius-lg);
+  padding:var(--g-4);display:flex;flex-direction:column;gap:6px;
+  transition:transform .2s;
+}
+@media (hover:hover){.contact-card:hover{transform:translateY(-4px)}}
+.contact-card .ic{width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.1);display:grid;place-items:center;margin-bottom:10px}
+.contact-card h3{font-size:1rem;color:var(--cheese)}
+.contact-card a{font-weight:900;font-size:1.12rem;color:#fff}
+.contact-card a:hover{color:var(--cheese)}
+.contact-card p{font-size:var(--fs-sm);color:rgba(251,244,232,.72)}
+
+/* ============================================================
+   FAQ (нативное раскрытие — доступно и без JS)
+   ============================================================ */
+.faq{background:var(--cream)}
+.faq__list{max-width:760px;margin:var(--g-5) auto 0}
+.faq details{
+  background:var(--white);border:1px solid rgba(44,27,16,.08);border-radius:var(--radius);
+  margin-bottom:12px;box-shadow:var(--shadow-1);overflow:hidden;
+}
+.faq summary{
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  font-family:var(--font-d);font-weight:800;font-size:1.02rem;padding:20px 22px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(216,68,42,.1);color:var(--tomato-dark);font-family:var(--font-b);font-weight:900;
+  font-size:1.2rem;transition:transform .2s;
+}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details[open] summary{background:rgba(216,68,42,.04)}
+.faq__answer{padding:0 22px 22px;color:var(--choco-soft);font-size:var(--fs-sm)}
+
+/* ============================================================
+   ФУТЕР
+   ============================================================ */
+.footer{background:var(--choco);color:rgba(251,244,232,.75);padding:var(--g-5) 0 var(--g-4)}
+.footer__top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding-bottom:var(--g-3);border-bottom:1px solid rgba(255,255,255,.12)}
+.footer .logo b{color:var(--cheese)}
+.footer__socials{display:flex;gap:12px}
+.footer__socials a{
+  width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.08);
+  display:grid;place-items:center;transition:background .2s,transform .2s;
+}
+@media (hover:hover){.footer__socials a:hover{background:var(--tomato);transform:translateY(-3px)}}
+.footer__bottom{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;padding-top:var(--g-3);font-size:var(--fs-sm)}
+.footer__bottom a:hover{color:var(--cheese)}
+.footer__req{font-size:var(--fs-xs);color:rgba(251,244,232,.55);margin-top:2px}
+
+/* ============================================================
+   ПЛАВАЮЩИЕ ЭЛЕМЕНТЫ: назад-наверх + мобильная панель заказа
+   ============================================================ */
+.to-top{
+  position:fixed;right:22px;bottom:22px;z-index:150;width:48px;height:48px;border-radius:50%;
+  background:var(--choco);color:var(--cheese);display:grid;place-items:center;
+  box-shadow:var(--shadow-2);opacity:0;pointer-events:none;transform:translateY(10px);
+  transition:opacity .25s,transform .25s,background .2s;
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:none}
+@media (hover:hover){.to-top:hover{background:var(--tomato);color:#fff}}
+
+.order-bar{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:160;
+  background:color-mix(in srgb, var(--cream) 92%, transparent);
+  backdrop-filter:blur(14px);border-top:1px solid rgba(44,27,16,.1);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  gap:10px;box-shadow:0 -6px 20px rgba(44,27,16,.08);
+}
+.order-bar .btn{flex:1;padding:13px 14px;min-height:48px}
+
+/* ============================================================
+   ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ============================================================
+   АДАПТИВ (подход Bootstrap: mobile-first брейкпоинты)
+   ============================================================ */
+@media (max-width:1024px){
+  .features__grid{grid-template-columns:repeat(2,1fr)}
+  .hits__grid{grid-template-columns:repeat(2,1fr)}
+  .gallery__grid{grid-template-columns:repeat(2,1fr)}
+  .points__grid{grid-template-columns:repeat(2,1fr)}
+  .places{grid-template-columns:1fr}
+  .contacts__bottom{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .nav,.header__cta .phone-link,.header__cta .header-btn{display:none}
+  .burger{display:flex}
+  .about__grid{grid-template-columns:1fr;gap:var(--g-5)}
+  .about__badge{left:14px}
+  .steps{grid-template-columns:1fr}
+  .specials__in{grid-template-columns:1fr;gap:var(--g-4)}
+  .order-bar{display:flex}
+  .section{padding-block:var(--g-6)}
+  .to-top{bottom:86px}
+}
+@media (max-width:560px){
+  .features__grid,.points__grid,.hits__grid,.gallery__grid{grid-template-columns:1fr}
+  .gallery__grid figure:nth-child(1){grid-column:auto;grid-row:auto}
+  .gallery__grid figure:nth-child(4){grid-column:auto}
+  .hero{padding-top:calc(var(--header-h) + 26px)}
+}
+/* Доступность: уважаем настройку «меньше движения» */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+
+<!-- ================= ШАПКА ================= -->
+<header class="header" id="header">
+  <div class="container header__in">
+    <a href="#top" class="logo" aria-label="Пиццафорния — на главную"><span class="pz" aria-hidden="true">🍕</span><span>Пицца<b>форния</b></span></a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#about" id="nav-about">О нас</a>
+      <a href="#menu" id="nav-menu">Меню</a>
+      <a href="#specials" id="nav-specials">Акции</a>
+      <a href="#delivery" id="nav-delivery">Доставка</a>
+      <a href="#contacts" id="nav-contacts">Контакты</a>
+    </nav>
+    <div class="header__cta">
+      <a class="phone-link" href="tel:+79383150110">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +7 938 315-01-10
+      </a>
+      <a class="btn btn-tomato btn-sm header-btn" href="#menu">Заказать</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Мобильная навигация">
+  <a href="#about">О нас</a>
+  <a href="#menu">Меню</a>
+  <a href="#specials">Акции</a>
+  <a href="#delivery">Доставка</a>
+  <a href="#contacts">Контакты</a>
+  <a class="btn btn-tomato" href="tel:+79383150110">📞 Позвонить: +7 938 315-01-10</a>
+</nav>
+
+<main id="main">
+
+<!-- ================= ГЕРОЙ ================= -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__bg">
+    <img src="https://optim.tildacdn.com/tild3234-3866-4031-b238-626333396633/-/resize/480x/-/format/webp/__2026-02-03__105336.png.webp"
+         srcset="https://optim.tildacdn.com/tild3234-3866-4031-b238-626333396633/-/resize/480x/-/format/webp/__2026-02-03__105336.png.webp 480w,
+                 https://optim.tildacdn.com/tild3234-3866-4031-b238-626333396633/-/resize/960x/-/format/webp/__2026-02-03__105336.png.webp 960w,
+                 https://optim.tildacdn.com/tild3234-3866-4031-b238-626333396633/-/resize/1440x/-/format/webp/__2026-02-03__105336.png.webp 1440w,
+                 https://optim.tildacdn.com/tild3234-3866-4031-b238-626333396633/-/resize/1920x/-/format/webp/__2026-02-03__105336.png.webp 1920w"
+         sizes="100vw" width="1920" height="1280" fetchpriority="high" decoding="async"
+         alt="Домашние мини-пиццы Пиццафорния">
+  </div>
+  <div class="container hero__inner">
+    <span class="kicker">Красная Поляна · домашняя еда</span>
+    <h1 id="hero-title">Пицца<span class="accent">форния</span></h1>
+    <p class="typed-line" aria-live="polite">Мини-пицца — <span id="typed"></span><span class="cursor" aria-hidden="true"></span></p>
+    <p class="hero__lead">Домашние мини-пиццы из свежего теста, сосиска в тесте с нежным картофельным пюре, паста в сырной голове и салат «Цезарь». Тот самый вкус детства — теперь и с доставкой по Красной Поляне.</p>
+    <div class="hero__cta">
+      <a class="btn btn-tomato" href="#menu">Смотреть меню</a>
+      <a class="btn btn-ghost" style="color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)" href="https://eda.yandex.ru/restaurant/piccaforniya_j7lzb" target="_blank" rel="noopener">🛵 Заказать доставку</a>
+    </div>
+    <div class="hero__meta">
+      <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +7 938 315-01-10</div>
+      <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 4 точки в Красной Поляне</div>
+      <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Круглосуточный филиал</div>
+    </div>
+  </div>
+  <a class="hero__scroll" href="#features" aria-label="Листайте вниз">Листайте вниз
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</section>
+
+<!-- ================= ФИШКИ ================= -->
+<section class="features section" id="features" aria-labelledby="features-title">
+  <div class="container">
+    <h2 id="features-title" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">Почему нас выбирают</h2>
+    <div class="features__grid">
+      <article class="feat reveal">
+        <div class="feat__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D8442A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 0 1 10 10c0 5.5-4 10-10 10S2 17.5 2 12A10 10 0 0 1 12 2z"/><circle cx="6" cy="14" r="1.6" fill="#D8442A"/><circle cx="12" cy="9" r="1.6" fill="#D8442A"/><circle cx="17" cy="14" r="1.6" fill="#D8442A"/></svg></div>
+        <h3>Свежее тесто</h3>
+        <p>Каждое тесто замешиваем вручную в день приготовления — никаких полуфабрикатов.</p>
+      </article>
+      <article class="feat reveal" style="transition-delay:.06s">
+        <div class="feat__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D8442A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Вкус детства</h3>
+        <p>Сосиска в тесте с нежным картофельным пюре внутри — как в школьной столовой, только лучше.</p>
+      </article>
+      <article class="feat reveal" style="transition-delay:.12s">
+        <div class="feat__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D8442A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="#D8442A"/></svg></div>
+        <h3>Доступные цены</h3>
+        <p>Паста в сырной голове и салат «Цезарь» — по-настоящему доступные цены.</p>
+      </article>
+      <article class="feat reveal" style="transition-delay:.18s">
+        <div class="feat__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D8442A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <h3>Доставка и навынос</h3>
+        <p>Привозим горячую пиццу по Красной Поляне, а на Защитников Кавказа работаем круглосуточно.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= О НАС ================= -->
+<section class="about section" id="about" aria-labelledby="about-title">
+  <div class="container about__grid">
+    <div class="about__media reveal">
+      <img class="main-img" width="720" height="792" loading="lazy" decoding="async"
+           srcset="https://optim.tildacdn.com/tild6336-3463-4231-b838-353639353035/-/resize/420x460/-/format/webp/2323EFBE-B423-40D7-A.WEBP.webp 420w,
+                   https://optim.tildacdn.com/tild6336-3463-4231-b838-353639353035/-/resize/720x790/-/format/webp/2323EFBE-B423-40D7-A.WEBP.webp 720w"
+           sizes="(min-width:1024px) 520px, 92vw"
+           src="https://optim.tildacdn.com/tild6336-3463-4231-b838-353639353035/-/resize/720x790/-/format/webp/2323EFBE-B423-40D7-A.WEBP.webp"
+           alt="Аппетитные домашние мини-пиццы Пиццафорнии">
+      <div class="about__badge" aria-hidden="true"><b>4</b>точки<br>в Красной Поляне</div>
+    </div>
+    <div class="reveal">
+      <span class="kicker">О нас</span>
+      <h2 id="about-title" class="sec-title">Домашняя пицца,<br>как в детстве</h2>
+      <p class="sec-sub">Пиццафорния — это домашние мини-пиццы из свежего теста и сосиска в тесте с нежным картофельным пюре внутри. Тот самый вкус детства, который хочется возвращать снова и снова!</p>
+      <ul class="about__list">
+        <li><span class="check" aria-hidden="true">✓</span>Мини-пиццы из свежего теста и сосиска в тесте с пюре</li>
+        <li><span class="check" aria-hidden="true">✓</span>Паста в сырной голове и салат «Цезарь» по доступной цене</li>
+        <li><span class="check" aria-hidden="true">✓</span>Доставка по всей Красной Поляне</li>
+        <li><span class="check" aria-hidden="true">✓</span>Филиал на Защитников Кавказа, 74а — круглосуточно</li>
+      </ul>
+      <div class="about__actions">
+        <a class="btn btn-tomato" href="#contacts">Как нас найти</a>
+        <a class="btn btn-dark" href="https://t.me/pizzafornia" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ХИТЫ ================= -->
+<section class="hits section" id="hits" aria-labelledby="hits-title">
+  <div class="container">
+    <div class="hits__head">
+      <div class="reveal">
+        <span class="kicker">Наши хиты</span>
+        <h2 id="hits-title" class="sec-title">Что все хвалят</h2>
+        <p class="sec-sub">То, что берут чаще всего — и возвращаются за добавкой.</p>
+      </div>
+      <a class="btn btn-ghost reveal" href="#menu">Полное меню →</a>
+    </div>
+    <div class="hits__grid">
+      <article class="hit reveal">
+        <div class="hit__imgwrap">
+          <span class="hit__tag">Хит</span>
+          <img width="600" height="600" loading="lazy" decoding="async"
+               srcset="https://optim.tildacdn.com/tild6539-3165-4338-b534-643461363734/-/resize/320x320/-/format/webp/__2026-01-16__135301.png.webp 320w,
+                       https://optim.tildacdn.com/tild6539-3165-4338-b534-643461363734/-/resize/600x600/-/format/webp/__2026-01-16__135301.png.webp 600w"
+               sizes="(min-width:1024px) 265px, (min-width:560px) 46vw, 92vw"
+               src="https://optim.tildacdn.com/tild6539-3165-4338-b534-643461363734/-/resize/600x600/-/format/webp/__2026-01-16__135301.png.webp" alt="Домашняя мини-пицца из свежего теста">
+        </div>
+        <div class="hit__body">
+          <h3>Мини-пиццы</h3>
+          <p>Домашние мини-пиццы из свежего теста — горячие, румяные, с хрустящей корочкой.</p>
+        </div>
+      </article>
+      <article class="hit reveal" style="transition-delay:.06s">
+        <div class="hit__imgwrap">
+          <span class="hit__tag light">Вкус детства</span>
+          <img width="600" height="600" loading="lazy" decoding="async"
+               srcset="https://optim.tildacdn.com/tild3138-6632-4238-b630-396363356364/-/resize/320x320/-/format/webp/__2026-02-03__103948.png.webp 320w,
+                       https://optim.tildacdn.com/tild3138-6632-4238-b630-396363356364/-/resize/600x600/-/format/webp/__2026-02-03__103948.png.webp 600w"
+               sizes="(min-width:1024px) 265px, (min-width:560px) 46vw, 92vw"
+               src="https://optim.tildacdn.com/tild3138-6632-4238-b630-396363356364/-/resize/600x600/-/format/webp/__2026-02-03__103948.png.webp" alt="Сосиска в тесте с картофельным пюре">
+        </div>
+        <div class="hit__body">
+          <h3>Сосиска в тесте</h3>
+          <p>С нежным картофельным пюре внутри — тот самый вкус детства.</p>
+        </div>
+      </article>
+      <article class="hit reveal" style="transition-delay:.12s">
+        <div class="hit__imgwrap">
+          <span class="hit__tag">Хит</span>
+          <img width="600" height="600" loading="lazy" decoding="async"
+               srcset="https://optim.tildacdn.com/tild3532-3533-4064-a665-346464383837/-/resize/320x320/-/format/webp/22__60.jpg.webp 320w,
+                       https://optim.tildacdn.com/tild3532-3533-4064-a665-346464383837/-/resize/600x600/-/format/webp/22__60.jpg.webp 600w"
+               sizes="(min-width:1024px) 265px, (min-width:560px) 46vw, 92vw"
+               src="https://optim.tildacdn.com/tild3532-3533-4064-a665-346464383837/-/resize/600x600/-/format/webp/22__60.jpg.webp" alt="Паста, поданная в сырной голове">
+        </div>
+        <div class="hit__body">
+          <h3>Паста в сырной голове</h3>
+          <p>Сытная паста, поданная в сырной голове — эффектно и очень вкусно.</p>
+        </div>
+      </article>
+      <article class="hit reveal" style="transition-delay:.18s">
+        <div class="hit__imgwrap">
+          <span class="hit__tag light">Классика</span>
+          <img width="600" height="600" loading="lazy" decoding="async"
+               srcset="https://optim.tildacdn.com/tild3431-3431-4263-a430-353765613934/-/resize/320x320/-/format/webp/1807_6.jpg.webp 320w,
+                       https://optim.tildacdn.com/tild3431-3431-4263-a430-353765613934/-/resize/600x600/-/format/webp/1807_6.jpg.webp 600w"
+               sizes="(min-width:1024px) 265px, (min-width:560px) 46vw, 92vw"
+               src="https://optim.tildacdn.com/tild3431-3431-4263-a430-353765613934/-/resize/600x600/-/format/webp/1807_6.jpg.webp" alt="Свежий салат Цезарь">
+        </div>
+        <div class="hit__body">
+          <h3>Салат «Цезарь»</h3>
+          <p>Свежий, сочный и по доступной цене — идеально дополнит пиццу.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ГАЛЕРЕЯ ================= -->
+<section class="gallery section" id="gallery" aria-labelledby="gallery-title">
+  <div class="container">
+    <div class="reveal">
+      <span class="kicker">Фото</span>
+      <h2 id="gallery-title" class="sec-title">Загляните к нам</h2>
+      <p class="sec-sub">Живые фото с наших точек — так пицца выглядит на самом деле.</p>
+    </div>
+    <div class="gallery__grid">
+      <figure class="reveal">
+        <img width="800" height="600" loading="lazy" decoding="async"
+             src="https://optim.tildacdn.com/tild3861-3735-4535-b734-316232376134/-/resize/700x520/-/format/webp/22__38.jpg.webp"
+             srcset="https://optim.tildacdn.com/tild3861-3735-4535-b734-316232376134/-/resize/700x520/-/format/webp/22__38.jpg.webp 700w, https://optim.tildacdn.com/tild3861-3735-4535-b734-316232376134/-/resize/360x270/-/format/webp/22__38.jpg.webp 360w"
+             sizes="(min-width:1024px) 528px, 92vw" alt="Мини-пиццы на столах пиццерии">
+        <figcaption>Наши мини-пиццы</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img width="600" height="400" loading="lazy" decoding="async" src="https://optim.tildacdn.com/tild6335-6165-4738-a563-636532663635/-/resize/360x270/-/format/webp/22__58.jpg.webp" alt="Горячая пицца крупным планом">
+      </figure>
+      <figure class="reveal">
+        <img width="600" height="400" loading="lazy" decoding="async" src="https://optim.tildacdn.com/tild6138-6636-4062-a138-623762343563/-/resize/360x270/-/format/webp/22__45.jpg.webp" alt="Пицца с румяной корочкой">
+        <figcaption>Свежее из печи</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img width="800" height="500" loading="lazy" decoding="async"
+             src="https://optim.tildacdn.com/tild3938-3066-4639-b939-396162336439/-/resize/700x420/-/format/webp/22__8.jpg.webp"
+             srcset="https://optim.tildacdn.com/tild3938-3066-4639-b939-396162336439/-/resize/700x420/-/format/webp/22__8.jpg.webp 700w, https://optim.tildacdn.com/tild3938-3066-4639-b939-396162336439/-/resize/360x220/-/format/webp/22__8.jpg.webp 360w"
+             sizes="(min-width:1024px) 528px, 92vw" alt="Большой заказ мини-пицц">
+        <figcaption>К нам приходят за добавкой</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img width="600" height="400" loading="lazy" decoding="async" src="https://optim.tildacdn.com/tild3639-3335-4664-b830-633966663437/-/resize/360x270/-/format/webp/photo.jpg.webp" alt="Аппетитная пицца с тянущимся сыром">
+      </figure>
+      <figure class="reveal">
+        <img width="600" height="400" loading="lazy" decoding="async" src="https://optim.tildacdn.com/tild3766-3138-4638-a138-353433653037/-/resize/360x270/-/format/webp/1807_35.jpg.webp" alt="Пицца с начинкой">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= МЕНЮ ПО ТОЧКАМ ================= -->
+<section class="menu-points section" id="menu" aria-labelledby="menu-title">
+  <div class="container">
+    <span class="kicker">Меню</span>
+    <h2 id="menu-title" class="sec-title">Меню в каждой точке своё</h2>
+    <p class="sec-sub">Откройте актуальное меню нужного филиала — оно обновляется каждый сезон.</p>
+    <div class="points__grid">
+      <a class="point reveal" href="https://disk.yandex.ru/i/NaUxGZbToj-BRA" target="_blank" rel="noopener">
+        <span class="point__head"><span class="pin" aria-hidden="true">📍</span><span class="point__arrow" aria-hidden="true">→</span></span>
+        <h3>ул. Турчинского, 54</h3>
+        <p>Основной филиал. Пн–Вс 09:00–22:00</p>
+        <span class="btn btn-tomato btn-sm">Смотреть меню</span>
+      </a>
+      <a class="point reveal" href="https://disk.yandex.ru/i/vp_LMeYENbI7ig" target="_blank" rel="noopener">
+        <span class="point__head"><span class="pin" aria-hidden="true">📍</span><span class="point__arrow" aria-hidden="true">→</span></span>
+        <h3>Курорт Красная Поляна</h3>
+        <p>Ярмарка «Променад», ул. Горная Карусель. Пт–Вс 11:00–00:00</p>
+        <span class="btn btn-tomato btn-sm">Смотреть меню</span>
+      </a>
+      <a class="point reveal" href="https://disk.yandex.ru/i/glq8BKrFzS4bBQ" target="_blank" rel="noopener">
+        <span class="point__head"><span class="pin" aria-hidden="true">📍</span><span class="point__arrow" aria-hidden="true">→</span></span>
+        <h3>ул. Защитников Кавказа, 74а</h3>
+        <p>Круглосуточный филиал — 24/7</p>
+        <span class="btn btn-tomato btn-sm">Смотреть меню</span>
+      </a>
+      <a class="point reveal" href="https://eda.yandex.ru/restaurant/piccaforniya_j7lzb" target="_blank" rel="noopener">
+        <span class="point__head"><span class="pin" style="background:rgba(216,68,42,.25)" aria-hidden="true">🛵</span><span class="point__arrow" aria-hidden="true">→</span></span>
+        <h3>Доставка на дом</h3>
+        <p>Закажите через Яндекс Еду — привезём горячим по Красной Поляне</p>
+        <span class="btn btn-tomato btn-sm">Заказать доставку</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= АКЦИИ ================= -->
+<section class="specials section" id="specials" aria-labelledby="specials-title">
+  <div class="container">
+    <div class="specials__in reveal">
+      <div>
+        <span class="kicker">Акция</span>
+        <h2 id="specials-title">Каждая шестая пицца — <span class="free">бесплатно!</span></h2>
+        <p class="specials__desc">Покупаете пять мини-пицц — шестая в подарок. Считайте сами: шестая пицца буквально согревает ваш счёт.</p>
+        <div class="specials__cta">
+          <a class="btn btn-dark" href="tel:+79383150110">📞 Заказать: +7 938 315-01-10</a>
+          <a class="btn btn-ghost" style="color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.45)" href="https://t.me/pizzafornia" target="_blank" rel="noopener">Уточнить в Telegram</a>
+        </div>
+      </div>
+      <div class="specials__side">
+        <div class="spec-card"><span class="num">5</span><div>мини-пицц покупаете<br>в один заказ</div></div>
+        <div class="spec-card"><span class="num">6-я</span><div>пицца — в подарок,<br>вкус — как всегда</div></div>
+        <div class="spec-card"><span class="num">🍕</span><div>Акция действует<br>во всех точках и в доставке</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ДОСТАВКА ================= -->
+<section class="delivery section" id="delivery" aria-labelledby="delivery-title">
+  <div class="container">
+    <div class="reveal">
+      <span class="kicker">Доставка</span>
+      <h2 id="delivery-title" class="sec-title">Горячая пицца — за 3 шага</h2>
+      <p class="sec-sub">Доставляем по всей Красной Поляне. Просто, быстро и без лишних звонков.</p>
+    </div>
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step__num" aria-hidden="true">1</span>
+        <h3>Выберите и закажите</h3>
+        <p>Позвоните по номеру <b>+7 938 315-01-10</b> или оформите заказ в Яндекс Еде.</p>
+      </li>
+      <li class="step reveal" style="transition-delay:.07s">
+        <span class="step__num" aria-hidden="true">2</span>
+        <h3>Мы готовим прямо сейчас</h3>
+        <p>Свежее тесто и начинки — пицца собирается после вашего заказа, а не заранее.</p>
+      </li>
+      <li class="step reveal" style="transition-delay:.14s">
+        <span class="step__num" aria-hidden="true">3</span>
+        <h3>Привозим горячей</h3>
+        <p>Курьер довозит заказ по Красной Поляне — пицца приезжает горячей и румяной.</p>
+      </li>
+    </ol>
+    <div class="delivery__note reveal">
+      <span>🛵 Доставка по Красной Поляне · навынос во всех точках</span>
+      <a class="btn btn-tomato" href="tel:+79383150110">Заказать сейчас</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= КОНТАКТЫ ================= -->
+<section class="contacts section" id="contacts" aria-labelledby="contacts-title">
+  <div class="container">
+    <div class="reveal">
+      <span class="kicker">Где мы находимся</span>
+      <h2 id="contacts-title" class="sec-title">4 точки — рядом с вами</h2>
+      <p class="sec-sub">Заходите сами или закажите доставку — мы ждём вас в каждом районе Красной Поляны.</p>
+    </div>
+    <div class="places">
+      <article class="place reveal">
+        <div class="place__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <h3>ул. Турчинского, 54</h3>
+          <p class="addr">Красная Поляна</p>
+          <span class="hours"><span class="dot" aria-hidden="true"></span>Пн–Вс 09:00 – 22:00</span>
+        </div>
+      </article>
+      <article class="place reveal">
+        <div class="place__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <h3>ул. Защитников Кавказа, 74а</h3>
+          <p class="addr">Красная Поляна · круглосуточно</p>
+          <span class="hours night"><span class="dot" aria-hidden="true"></span>24/7 — без выходных</span>
+        </div>
+      </article>
+      <article class="place reveal">
+        <div class="place__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <h3>Ярмарка «Променад»</h3>
+          <p class="addr">Курорт Красная Поляна, ул. Горная Карусель</p>
+          <span class="hours"><span class="dot" aria-hidden="true"></span>Пт–Вс 11:00 – 00:00</span>
+        </div>
+      </article>
+      <article class="place reveal">
+        <div class="place__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <h3>Аквапарк «Волна»</h3>
+          <p class="addr">ул. Горная Карусель, 3, Красная Поляна</p>
+          <span class="hours"><span class="dot" aria-hidden="true"></span>В часы работы аквапарка</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="contacts__bottom">
+      <div class="contact-card reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F0B843" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Сделайте заказ</h3>
+        <a href="tel:+79383150110">+7 938 315-01-10</a>
+        <p>Звонки принимаем в часы работы точек</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F0B843" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h3>По всем вопросам</h3>
+        <a href="mailto:Slllimmmruslan@yandex.ru">Slllimmmruslan@yandex.ru</a>
+        <p>Напишите нам — ответим в рабочее время</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F0B843" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <h3>Мы в мессенджерах</h3>
+        <a href="https://t.me/pizzafornia" target="_blank" rel="noopener">Telegram: @pizzafornia</a>
+        <p>Оперативно отвечаем на вопросы о заказах</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq section" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="kicker">Вопросы</span>
+      <h2 id="faq-title" class="sec-title" style="margin-inline:auto">Частые вопросы</h2>
+    </div>
+    <div class="faq__list">
+      <details class="reveal" open>
+        <summary>Как сделать заказ?</summary>
+        <p class="faq__answer">Позвоните нам по номеру <a href="tel:+79383150110" style="color:var(--tomato-dark);font-weight:800">+7 938 315-01-10</a>, напишите в <a href="https://t.me/pizzafornia" target="_blank" rel="noopener" style="color:var(--tomato-dark);font-weight:800">Telegram</a> или закажите через <a href="https://eda.yandex.ru/restaurant/piccaforniya_j7lzb" target="_blank" rel="noopener" style="color:var(--tomato-dark);font-weight:800">Яндекс Еду</a>.</p>
+      </details>
+      <details class="reveal">
+        <summary>Куда вы доставляете?</summary>
+        <p class="faq__answer">Доставляем по всей Красной Поляне. Точные сроки зависят от района — уточните у оператора при подтверждении заказа.</p>
+      </details>
+      <details class="reveal">
+        <summary>Есть ли круглосуточный филиал?</summary>
+        <p class="faq__answer">Да: точка на ул. Защитников Кавказа, 74а работает круглосуточно, без выходных.</p>
+      </details>
+      <details class="reveal">
+        <summary>Как работает акция «каждая шестая пицца бесплатно»?</summary>
+        <p class="faq__answer">При заказе пяти мини-пицц шестая даётся в подарок. Акция действует во всех точках и в доставке.</p>
+      </details>
+      <details class="reveal">
+        <summary>Где посмотреть полное меню?</summary>
+        <p class="faq__answer">Меню отличается по филиалам — откройте PDF-меню нужной точки в <a href="#menu" style="color:var(--tomato-dark);font-weight:800">разделе «Меню»</a> или спросите в Telegram.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= ФУТЕР ================= -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__top">
+      <a href="#top" class="logo"><span class="pz" aria-hidden="true">🍕</span><span>Пицца<b>форния</b></span></a>
+      <div class="footer__socials">
+        <a href="https://t.me/pizzafornia" target="_blank" rel="noopener" aria-label="Пиццафорния в Telegram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.9 4.6 18.9 19c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.4.5-.9.5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L7.9 13.2l-4.5-1.4c-1-.3-1-1 .2-1.5L20.7 3c.8-.3 1.5.2 1.2 1.6z"/></svg>
+        </a>
+        <a href="https://vk.ru/pizzafornia" target="_blank" rel="noopener" aria-label="Пиццафорния ВКонтакте">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.9 18.3c-6.4 0-10.4-4.5-10.6-12h3.3c.1 5.5 2.5 7.8 4.4 8.3V6.3h3.1v4.7c1.9-.2 3.8-2.3 4.4-4.7h3.1c-.5 2.8-2.6 4.9-4.1 5.8 1.5.7 3.9 2.5 4.8 6.2h-3.4c-.7-2.3-2.5-4-4.8-4.3v4.3h-.2z"/></svg>
+        </a>
+        <a href="https://t.me/+79383150110" target="_blank" rel="noopener" aria-label="Заказать в Telegram по телефону">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>
+        <p>© <span id="year">2026</span> Пиццафорния · Красная Поляна</p>
+        <p class="footer__req">ИНН 026827888820 · ИП Хабибуллин Руслан Алексеевич</p>
+      </div>
+      <a href="https://pizzafornia.tilda.ws/politica" target="_blank" rel="noopener">Политика обработки персональных данных</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= ПЛАВАЮЩИЕ ЭЛЕМЕНТЫ ================= -->
+<a class="to-top" href="#top" id="toTop" aria-label="Наверх">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+</a>
+
+<!-- Мобильная панель заказа: закон Фиттса — действие всегда под пальцем -->
+<div class="order-bar" role="complementary" aria-label="Быстрый заказ">
+  <a class="btn btn-ghost" href="tel:+79383150110">📞 Позвонить</a>
+  <a class="btn btn-tomato" href="#menu">🍕 Заказать</a>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---------- производительность и утилиты ---------- */
+  var $ = function(sel, ctx){ return (ctx || document).querySelector(sel); };
+  var $$ = function(sel, ctx){ return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- шапка: тень при скролле ---------- */
+  var header = $('#header');
+  var toTop = $('#toTop');
+  function onScroll(){
+    var y = window.scrollY;
+    header.classList.toggle('scrolled', y > 10);
+    toTop.classList.toggle('show', y > 600);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- мобильное меню (ARIA-корректно) ---------- */
+  var burger = $('#burger'), mobile = $('#mobileMenu');
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    mobile.classList.toggle('open', open);
+  }
+  burger.addEventListener('click', function(){
+    setMenu(mobile.classList.contains('open') ? false : true);
+  });
+  $$('a', mobile).forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+
+  /* ---------- печатающаяся строка (с уважением к prefers-reduced-motion) ---------- */
+  var words = ['в центре', 'с доставкой', 'домашняя', 'как в детстве'];
+  var typed = $('#typed');
+  if(reduceMotion){
+    typed.textContent = words.join(' · ');
+  } else {
+    var wi = 0, ci = 0, deleting = false;
+    (function type(){
+      var word = words[wi];
+      typed.textContent = word.slice(0, ci);
+      if(!deleting){
+        if(ci < word.length){ ci++; setTimeout(type, 85); }
+        else { deleting = true; setTimeout(type, 1900); }
+      } else {
+        if(ci > 0){ ci--; setTimeout(type, 42); }
+        else { deleting = false; wi = (wi + 1) % words.length; setTimeout(type, 320); }
+      }
+    })();
+  }
+
+  /* ---------- появление секций (только если движение разрешено) ---------- */
+  var reveals = $$('.reveal');
+  if(reduceMotion || !('IntersectionObserver' in window)){
+    reveals.forEach(function(n){ n.classList.add('visible'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, {threshold:.1, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(n){ io.observe(n); });
+  }
+
+  /* ---------- scrollspy: подсветка активного пункта меню ---------- */
+  var navIds = ['about','menu','specials','delivery','contacts'];
+  function spy(){
+    var pos = window.scrollY + header.offsetHeight + 160;
+    var current = null;
+    navIds.forEach(function(id){
+      var sec = document.getElementById(id);
+      if(sec && sec.offsetTop <= pos) current = id;
+    });
+    if(!current && window.scrollY < 80) current = 'top';
+    navIds.forEach(function(id){
+      var link = $('#nav-' + id);
+      if(link) link.classList.toggle('active', id === current);
+    });
+  }
+  window.addEventListener('scroll', spy, {passive:true});
+  spy();
+})();
+</script>
+</body>
+</html>
